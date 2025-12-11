@@ -25,7 +25,7 @@ export default function OverallRank() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-tr from-[#fcf0fd] to-[#efc1a8] bg-[url('/assets/tableImage/GCtable.png')]
-        bg-cover bg-center bg-no-repeat adjust-top p-3 mx-auto">
+        bg-cover bg-center bg-no-repeat  p-3 mx-auto">
         
         {/* 🔹 Blurred Background Image Layer */}
         <div className="absolute inset-0 bg-[url('/assets/tableImage/GCtable.png')] bg-cover bg-center filter blur-xs"></div>
