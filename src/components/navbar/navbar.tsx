@@ -16,63 +16,7 @@ export default function Navbar() {
     document.body.removeChild(link);
   };
 
-  return (
-    <nav
-      className="
-    sticky top-0 z-50 flex items-center justify-between px-2 pt-2 
-    backdrop-blur-md
-    bg-gradient-to-b from-[#4b2718]/80 
-    border-b border-white/5
-  "
-    >
-      <div>
-        <NavLink
-          to="/"
-          className="
-        group relative flex items-center gap-3
-      transition
-      hover:scale-[1.07]
-	  
-    "
-        >
-          <img
-            src="/assets/gclogo.png"
-            alt="GC Logo"
-            className="w-18 h-18 object-contain"
-          />
-
-          <div>
-            <h1 className="m-0 text-amber-400 text-3xl russo-one-regular font-bold tracking-wide ">
-              SHAURYA
-            </h1>
-            <span className="text-s russo-one-regular text-white/70">The Sports Committee</span>
-          </div>
-        </NavLink>
-      </div>
-      <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
-        <div className="pointer-events-auto">
-          <NavCenter onDownloadRulebook={handleDownloadRulebook} />
-        </div>
-      </div>
-
-      {/* right: actions */}
-      <div className="flex items-center gap-3">
-        <button
-          onClick={handleDownloadRulebook}
-          className="cursor-target hidden russo-one-regular rounded-md border border-amber-400/25 bg-amber-400/8 px-3 py-1.5 text-sm font-semibold text-amber-300 hover:bg-amber-400/12 md:inline-flex"
-        >
-          📘 Rulebook
-        </button>
-      </div>
-      <Hamburger
-        navLinkActive={navLinkActive}
-        onDownloadRulebook={handleDownloadRulebook}
-      />
-    </nav>
-  );
-}
-
-function NavCenter({ onDownloadRulebook }: { onDownloadRulebook: () => void }) {
+function NavCenter() {
   const links: { to: string; label: string }[] = [
     { to: "/", label: "Home" },
     { to: "/sports", label: "Sports" },
@@ -105,7 +49,9 @@ function NavCenter({ onDownloadRulebook }: { onDownloadRulebook: () => void }) {
               <span
                 className={
                   "russo-one-regular cursor-target rounded-md px-3 py-1 font-bold transition-colors " +
-                  (isActive ? "text-amber-400" : "text-white/85 hover:text-amber-300")
+                  (isActive
+                    ? "text-amber-400"
+                    : "text-white/85 hover:text-amber-300")
                 }
               >
                 {l.label}
@@ -117,29 +63,80 @@ function NavCenter({ onDownloadRulebook }: { onDownloadRulebook: () => void }) {
     </div>
   );
 }
+  return (
+    <nav
+      className="
+    sticky top-0 z-50 flex items-center justify-between px-2 pt-2 
+    backdrop-blur-md
+    bg-gradient-to-b from-[#4b2718]/80 
+    border-b border-white/5
+  "
+    >
+      <div>
+        <NavLink
+          to="/"
+          className="
+        group relative flex items-center gap-3
+      transition
+      hover:scale-[1.07]
+	  
+    "
+        >
+          <img
+            src="/assets/gclogo.png"
+            alt="GC Logo"
+            className="w-18 h-18 object-contain"
+          />
+
+          <div>
+            <h1 className="m-0 text-amber-400 text-3xl russo-one-regular font-bold tracking-wide ">
+              SHAURYA
+            </h1>
+            <span className="text-s russo-one-regular text-white/70">
+              The Sports Committee
+            </span>
+          </div>
+        </NavLink>
+      </div>
+      <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
+        <div className="pointer-events-auto">
+          <NavCenter   />
+        </div>
+      </div>
+
+      {/* right: actions */}
+      <div className="flex items-center gap-3">
+        <button
+          onClick={handleDownloadRulebook}
+          className="cursor-target hidden russo-one-regular rounded-md border border-amber-400/25 bg-amber-400/8 px-3 py-1.5 text-sm font-semibold text-amber-300 hover:bg-amber-400/12 md:inline-flex"
+        >
+          📘 Rulebook
+        </button>
+      </div>
+      <Hamburger
+        navLinkActive={navLinkActive}
+        
+      />
+    </nav>
+  );
+}
+
 interface NavRightProps {
   navLinkActive: ({ isActive }: { isActive: boolean }) => string;
   className?: string;
   children?: React.ReactNode;
-  onDownloadRulebook: () => void;
+   
 }
 const NavRight = ({
   navLinkActive,
   className: cn = "navbar-right ",
-  onDownloadRulebook,
 }: NavRightProps) => {
   return (
     <div className={cn}>
-      <NavLink
-        to="/"
-        className={`${navLinkActive} russo-one-regular `}
-      >
+      <NavLink to="/" className={`${navLinkActive} russo-one-regular `}>
         Home
       </NavLink>
-      <NavLink
-        to="/sports"
-        className={`${navLinkActive} russo-one-regular  `}
-      >
+      <NavLink to="/sports" className={`${navLinkActive} russo-one-regular  `}>
         Sports
       </NavLink>
       <NavLink to="/rank" className={`${navLinkActive} russo-one-regular `}>
@@ -154,9 +151,9 @@ const NavRight = ({
 
 interface HamburgerProps {
   navLinkActive: ({ isActive }: { isActive: boolean }) => string;
-  onDownloadRulebook: () => void;
+   
 }
-const Hamburger = ({ navLinkActive, onDownloadRulebook }: HamburgerProps) => {
+const Hamburger = ({ navLinkActive }: HamburgerProps) => {
   const [hamState, setHamState] = useState(false);
   const handleHamClick = () => {
     setHamState(!hamState);
@@ -176,7 +173,7 @@ const Hamburger = ({ navLinkActive, onDownloadRulebook }: HamburgerProps) => {
         <NavRight
           navLinkActive={navLinkActive}
           className="hamburger-menu-content"
-          onDownloadRulebook={onDownloadRulebook}
+           
         />
       </PopUp>
     </div>

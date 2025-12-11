@@ -1,6 +1,6 @@
 import CircularGallery from "../../components/circulargallery/CircularGallery";
 import SpotlightCard from "../../components/SpotlightCard";
-import ChromaGrid from "../../components/ChromaGrid";
+ 
 import "./home.scss";
 import ElectricBorder from "../../components/ElectricBorder";
 
