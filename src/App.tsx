@@ -26,7 +26,7 @@ function App() {
   //   }
   // }, [location.pathname]);
   return (
-    <div>
+    <div className="App">
           <TargetCursor
             spinDuration={2}
             hideDefaultCursor={true}
@@ -43,7 +43,8 @@ function App() {
         <Route path="/rulebook" element={<Rulebook />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
-      </Router>
+        </Router>
+
     </div>
   )
 }

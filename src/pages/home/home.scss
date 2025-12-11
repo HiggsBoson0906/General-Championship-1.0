@@ -8,25 +8,15 @@ $light-beige: #e8dcc4;
 $accent-blue: #4a7c9e;
 $dark-text: #2c1810;
 
-.home-container {
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-}
 
-.home-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  width: 100%;
-  animation: fadeInUp 0.8s ease-out;
-  padding-top: 8rem;
+.home-bg{
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('./assets/home/homebg.png');
+  
 }
-
+ 
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -38,271 +28,15 @@ $dark-text: #2c1810;
   }
 }
 
-// Description Box Styling
-.description-box {
-  background: linear-gradient(135deg, rgba(74, 35, 24, 0.9), rgba(139, 111, 71, 0.85));
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  padding: 3rem;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-  border: 2px solid rgba(157, 122, 77, 0.3);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
-              0 0 0 1px rgba(245, 234, 213, 0.1) inset;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6),
-                0 0 0 1px rgba(245, 234, 213, 0.15) inset;
-  }
+.popup{
+  animation: fadeInUp 0.6s ease-out;
 }
-
-.homepage-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: $cream-base;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-  letter-spacing: -1px;
-  line-height: 1.2;
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
+.circular-gallery-container {
+  width: 100%;
+  height: 100%;
+   max-width: 2500px;
+   margin-top: 40px;
+  pointer-events: none; // Ensure it doesn't interfere with other interactions
+  z-index: 1;
 }
-
-.homepage-description {
-  font-size: 1.25rem;
-  color: $light-beige;
-  text-align: center;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
-}
-
-// PDF Buttons Container
-.pdf-buttons-container {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.pdf-download-btn {
-  background: linear-gradient(135deg, $secondary-dark, $medium-brown);
-  color: $cream-base;
-  border: 2px solid rgba(157, 122, 77, 0.4);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(245, 234, 213, 0.2), transparent);
-    transition: left 0.5s ease;
-  }
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(135deg, lighten($secondary-dark, 5%), lighten($medium-brown, 5%));
-    border-color: rgba(157, 122, 77, 0.6);
-
-    &::before {
-      left: 100%;
-    }
-  }
-
-  &:active {
-    transform: translateY(-1px);
-  }
-
-  .btn-icon {
-    font-size: 1.5rem;
-  }
-
-  &.championship-btn {
-    background: linear-gradient(135deg, $primary-dark, darken($medium-brown, 5%));
-
-    &:hover {
-      background: linear-gradient(135deg, lighten($primary-dark, 5%), $medium-brown);
-    }
-  }
-}
-
-// Events Section
-.events-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: $cream-base;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  letter-spacing: -0.5px;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-}
-
-.event-buttons-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 0 1rem;
-}
-
-.event-card {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border: 2px solid rgba(157, 122, 77, 0.35);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  // Top accent line
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, $golden-brown, $cream-base, $golden-brown);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
-    z-index: 3;
-  }
-
-  // Overlay for better text readability
-  .card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(74, 35, 24, 0.2), rgba(139, 111, 71, 0.75));
-    transition: all 0.4s ease;
-    z-index: 1;
-  }
-
-  // Content wrapper
-  .card-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-  }
-
-  &:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-    border-color: rgba(157, 122, 77, 0.6);
-
-    &::before {
-      transform: scaleX(1);
-    }
-
-    .card-icon {
-      transform: scale(1.2) rotate(5deg);
-    }
-  }
-
-  .card-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
-  }
-
-  h3 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: $cream-base;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-  }
-
-  p {
-    font-size: 1.1rem;
-    color: $light-beige;
-    line-height: 1.6;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  }
-}
-
-// Responsive Design
-@media (max-width: 768px) {
-  .home-container {
-    padding: 2rem 1rem;
-  }
-
-  .home-content {
-    padding-top: 4rem;
-  }
-
-  .description-box {
-    padding: 2rem 1.5rem;
-    border-radius: 16px;
-  }
-
-  .event-buttons-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .event-card {
-    min-height: 280px;
-  }
-
-  .pdf-buttons-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .pdf-download-btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-// Additional polish for better depth
-@media (min-width: 1400px) {
-  .home-content {
-    max-width: 1400px;
-  }
-
-  .event-buttons-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+ 
