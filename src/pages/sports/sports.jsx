@@ -41,7 +41,7 @@ export default function Sports() {
 
 	return (
 		
-		<section className="adjust-top">
+		<section >
 			{/** Background */}
 			<div className="relative min-h-screen bg-gradient-to-tr from-[#fcf0fd] to-[#f6ede3]">
 				<div className="content">

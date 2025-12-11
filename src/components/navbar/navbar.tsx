@@ -66,7 +66,7 @@ function NavCenter() {
   return (
     <nav
       className="
-    sticky top-0 z-50 flex items-center justify-between px-2 pt-2 
+    sticky top-0 z-50 flex items-center justify-between px-2 pt-2
     backdrop-blur-md
     bg-gradient-to-b from-[#4b2718]/80 
     border-b border-white/5

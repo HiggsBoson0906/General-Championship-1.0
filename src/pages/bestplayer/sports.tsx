@@ -9,7 +9,7 @@ export default function BestBySports() {
     navigate(`/players/${game.sportId}`, { state: game });
   };
   return (
-    <section className="adjust-top">
+    <section>
       {/** Background */}
       <div className="relative min-h-screen bg-gradient-to-tr from-[#fcf0fd] to-[#FFFFF0]">
         <div className="content">
