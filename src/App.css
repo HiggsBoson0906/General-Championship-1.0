@@ -1,0 +1,401 @@
+/* =========================
+   Global Reset
+========================= */
+
+/* Set dark, intense background for the whole application */
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0d0d0d;
+  /* Very dark background */
+  color: #f0f0f0;
+  /* Light text color */
+  overflow-x: hidden;
+}
+
+
+
+/* Accent Colors */
+:root {
+  --primary-blue: #00bfff;
+  /* Electric Blue */
+  --accent-gold: #ffc400;
+  /* Championship Gold */
+  --text-light: #f0f0f0;
+  --text-dark: #1a1a1a;
+}
+
+/* =========================
+   Navbar - Blurred and Clear
+========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  /* Blurred Background Effect (Frosted Glass) */
+  background: rgba(13, 13, 13, 0.85);
+  /* Semi-transparent dark background */
+  backdrop-filter: blur(10px);
+  /* The blurring effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Left side: Logo + Text */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-left img {
+  width: 55px;
+  /* Increased logo size */
+  height: 55px;
+  /* Increased logo size */
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+}
+
+.navbar-left a {
+  text-decoration: none;
+  line-height: 1.2;
+  /* --- NEW/UPDATED STYLE --- */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* Space between logo and text block */
+  /* ------------------------- */
+}
+
+/* Text color inside the navbar is bright blue for clarity and sync */
+.navbar-left h1,
+.navbar-left span {
+  color: var(--primary-blue);
+  /* Synced color */
+  text-shadow: none;
+}
+
+.navbar-left h1 {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.navbar-left span {
+  font-size: 11px;
+  /* Decreased subtitle size */
+  opacity: 0.7;
+  display: block;
+}
+
+/* Right side: Links */
+.navbar-right {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar-right a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--primary-blue);
+  /* Synced color */
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+/* Hover effect */
+.navbar-right a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-blue);
+  /* Electric blue line */
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-right a:hover::after {
+  width: 100%;
+}
+
+.navbar-right a:hover {
+  color: var(--accent-gold);
+  /* Hover color for contrast */
+}
+
+
+/* =========================
+   Home Page - Full Screen Hero Section
+========================= */
+.home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px 20px;
+  /* Top padding to account for fixed navbar */
+}
+
+/* Dark gradient overlay for extreme readability of hero text */
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Use a radial gradient for a spotlight effect */
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 1;
+}
+
+/* Content layer over the overlay */
+.home-content {
+  position: relative;
+  z-index: 2;
+  color: var(--text-light);
+  padding: 0 10%;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homepage-title {
+  font-size: 4.5rem;
+  /* Massive title */
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: var(--accent-gold);
+  /* Gold title */
+  text-shadow: 0 0 15px rgba(255, 196, 0, 0.6);
+  /* Championship glow */
+  letter-spacing: 2px;
+}
+
+.homepage-description {
+  max-width: 900px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 4rem;
+  /* More space below description */
+  font-weight: 300;
+}
+
+.events-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-blue);
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.8);
+  /* Electric blue glow */
+}
+
+.event-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  /* Dynamic Button Style */
+  background: rgba(26, 26, 26, 0.7);
+  /* Darker background */
+  border: 1px solid var(--primary-blue);
+  backdrop-filter: blur(10px);
+  color: var(--text-light);
+  padding: 18px 35px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(0, 191, 255, 0.1);
+  box-shadow: 0 0 20px var(--primary-blue), 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar-right {
+    gap: 15px;
+  }
+
+  .homepage-title {
+    font-size: 3rem;
+  }
+
+  .homepage-description {
+    font-size: 1.1rem;
+  }
+
+  .events-title {
+    font-size: 2rem;
+  }
+
+  .event-buttons-container {
+    gap: 15px;
+  }
+
+  .event-card {
+    padding: 15px 25px;
+    font-size: 1rem;
+  }
+    
+}
+.sport-card{
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: PopupAnimation 1.5s ease;
+}
+.sport-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.popup-container {
+  background-image: url('./assets/GCtable.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 0 !important;
+  padding-bottom: 10px;
+  border-radius: 40px;
+}
+
+.MuiDialogTitle-root {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  color: #3A1616 !important;
+  padding-top: 5px !important;
+}
+
+.MuiDialogContent-root {
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  padding: 2px 16px !important;
+  background-color: transparent;
+}
+
+.MuiTableContainer-root {
+  background-color: rgba(168, 114, 73, 0.25) !important;
+  border-radius: 40px;
+  padding: 8px;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.table-header-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: none !important;
+  border-top: none;
+}
+
+.table-header-cell {
+  background-color: #3A1616 !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 1.5rem !important;
+  border-radius: 50px !important;
+  border-bottom: none !important;
+  z-index: 3!important;
+  top:0;
+  position: sticky;
+}
+.table-header-cell:last-child {
+  flex-grow: 0;
+  flex-basis: auto;
+  width: 100px;
+}
+
+.MuiTableBody-root .MuiTableRow-root:last-child .MuiTableCell-root {
+  border-bottom: none !important;
+}
+
+.tablecell {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+@media (max-width: 600px) {
+  .table-header-cell {
+    font-size: 1rem !important;
+  }
+
+  .tablecell {
+    font-size: 0.8rem !important;
+  }
+
+  .MuiDialogTitle-root {
+    font-size: 1.4rem !important;
+    margin: 10px 0 !important;
+  }
+  
+}
+
+@media (max-width: 666px) {
+  .popup-container {
+      background-size: contain;
+    }
+  
+}
+
+@keyframes PopupAnimation {
+
+  0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.02); opacity: 1; }
+    100% { transform: scale(1.0); opacity: 1; }
+}
+
+@keyframes popoutAnimation {
+  0%,100% { transform: scale(0.97); opacity: 1; }
+    50% { transform: scale(1); opacity: 1; }
+  
+}

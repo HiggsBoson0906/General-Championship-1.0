@@ -1,0 +1,44 @@
+
+
+/* Set dark, intense background for the whole application */
+body,
+#root {
+	width: 100%;
+	min-height: 100vh;
+	background-color: #0d0d0d; /* Very dark background */
+	color: #f0f0f0; /* Light text color */
+	overflow-x: hidden;
+}
+
+/* Accent Colors */
+:root {
+	--primary-blue: #00bfff; /* Electric Blue */
+	--accent-gold: #ffc400; /* Championship Gold */
+	--text-light: #f0f0f0;
+	--text-dark: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+	.navbar {
+		padding: 15px 20px;
+	}
+	.navbar-right {
+		gap: 15px;
+	}
+	.homepage-title {
+		font-size: 3rem;
+	}
+	.homepage-description {
+		font-size: 1.1rem;
+	}
+	.events-title {
+		font-size: 2rem;
+	}
+	.event-buttons-container {
+		gap: 15px;
+	}
+	.event-card {
+		padding: 15px 25px;
+		font-size: 1rem;
+	}
+}

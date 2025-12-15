@@ -1,0 +1,22 @@
+.event-card {
+	/* Dynamic Button Style */
+	background: rgba(26, 26, 26, 0.7); /* Darker background */
+	border: 1px solid var(--primary-blue);
+	backdrop-filter: blur(10px);
+	color: var(--text-light);
+	padding: 18px 35px;
+	border-radius: 8px;
+	font-size: 1.1rem;
+	font-weight: 700;
+	box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+	transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.event-card:hover {
+	transform: translateY(-5px) scale(1.05);
+	background: rgba(0, 191, 255, 0.1);
+	box-shadow: 0 0 20px var(--primary-blue), 0 5px 15px rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,64 @@
+//@use "tailwindcss";
+//@import "tailwind";
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+
+// @tailwind utilities;
+
+@font-face {
+	font-family: "VerminVibes";
+	src: local("VerminVibes"),
+		url("/assets/fonts/vermin.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Novega";
+	src: local("Novega"), url("/assets/fonts/novega.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "KnightWarrior";
+	src: local("KnightWarrior"),
+		url("/assets/fonts/knightWarrior.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "FastLines";
+	src: local("FastLines"),
+		url("/assets/fonts/fastLines.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "CrossFly";
+	src: local("CrossFly"), url("/assets/fonts/crossFly.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "speedPixel";
+	src: local("speedPixel"),
+		url("/assets/fonts/speedPixel.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "speedPixelItalic";
+	src: local("speedPixelItalic"),
+		url("/assets/fonts/speedPixelItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Brave81";
+	src: local("Brave81"), url("/assets/fonts/Brave81.ttf") format("truetype");
+}

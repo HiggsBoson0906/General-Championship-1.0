@@ -1,0 +1,13 @@
+// game-card
+div#game-card {
+	picture * {
+		border-radius: 5px;
+		overflow: hidden;
+		margin-bottom: 10px;
+	}
+	h3 {
+		color: #3a1616;
+		font-size: large;
+		font-weight: 600;
+	}
+}
